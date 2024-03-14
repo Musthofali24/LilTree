@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #131010;
+  background: -webkit-linear-gradient(to right, #1b1717, #131010);
+  background: linear-gradient(to right, #1b1717, #131010);
+  padding: 10px;
+}
+
+.card {
+  width: 350px;
+  height: 515px;
+  margin: 100px auto;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  background: url(assets/foto2.JPG);
+  background-size: cover;
+  background-position: center;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+}
+
+.front h2 {
+  font-weight: 500;
+}
+
+.front p {
+  color: #ccc;
+  font-size: 13px;
+}
+
+.front button {
+  width: 120px;
+  border: 1px solid #fff;
+  background: transparent;
+  border-radius: 50px;
+  padding: 8px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.back {
+  background-color: #fff;
+  color: #333;
+  padding: 50px 40px;
+  transform: rotateY(180deg);
+}
+
+.back h1 {
+  font-size: 30px;
+  line-height: 55px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.back h1 span {
+  font-weight: 400;
+}
+
+.back p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.back p span {
+  font-weight: 600;
+}
+
+.back .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 10px 0px;
+}
+
+.back img {
+  width: 120px;
+  border: 5px solid #746153;
+  border-radius: 50%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.col {
+  flex: 1;
+  text-align: center;
+  color: #555;
+  font-size: 12px;
+  position: relative;
+}
+
+.col h2 {
+  font-size: 20px;
+}
+
+.col::after {
+  content: "";
+  width: 1.5px;
+  height: 20px;
+  background: #203a43;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+.col:last-child::after {
+  display: none;
+}
+
+.col p {
+  margin-top: 5px;
+}
+
+.back a {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.back a:hover {
+  background-color: #746153;
+  color: #fff;
+  transition: ease-out 0.5s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
